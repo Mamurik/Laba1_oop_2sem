@@ -1,0 +1,126 @@
+﻿<Window x:Class="LibraryCatalogParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:LibraryCatalogParser"
+        Title="Library Catalog Parser" Height="720" Width="1280">
+    <Grid>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
+          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+          ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="#FFA6DBE2">
+            <DataGrid.Resources>
+                <Style TargetType="DataGrid">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="BorderBrush" Value="#FFACACAC" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="RowBackground" Value="#FFEAF0F7" />
+                    <Setter Property="AlternatingRowBackground" Value="#FFEBF0F7" />
+                    <Setter Property="GridLinesVisibility" Value="None" />
+                    <Setter Property="HeadersVisibility" Value="Column" />
+                    <Setter Property="CanUserResizeRows" Value="False" />
+                    <Setter Property="CanUserResizeColumns" Value="False" />
+                    <Setter Property="CanUserSortColumns" Value="True" />
+                    <Setter Property="RowHeight" Value="30" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFC7D1E5" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Padding" Value="5" />
+                    <Setter Property="BorderBrush" Value="#FFACACAC" />
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                </Style>
+
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderBrush" Value="#FFACACAC" />
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+
+                <Style TargetType="DataGridRow">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="BorderBrush" Value="#FFACACAC" />
+                    <Setter Property="BorderThickness" Value="0,1,0,0" />
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="#FFEBF0F7" />
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                            <Setter Property="Background" Value="#FFEAF0F7" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFDCEBFC" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#FFBDD7EE" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*" />
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="*" />
+                <DataGridTextColumn Header="Жанр" Binding="{Binding Genre}" Width="*" />
+                <DataGridTextColumn Header="Год издания" Binding="{Binding Year}" Width="*" />
+                <DataGridTextColumn Header="Издательство" Binding="{Binding Publisher}" Width="*" />
+                <DataGridTextColumn Header="Количество страниц" Binding="{Binding PageCount}" Width="*" />
+                <DataGridTextColumn Header="Количество книг" Binding="{Binding Quantity}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10">
+            <Button x:Name="addBookButton" Content="Обновить" Click="AddBookButton_Click" Margin="50">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF4CAF50" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="#FF4CAF50" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="FontWeight" Value="Bold" />
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF388E3C" />
+                                <Setter Property="BorderBrush" Value="#FF388E3C" />
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="selectXmlFileButton" Content="Выбрать XML файл" Click="SelectXmlFileButton_Click" Height="42">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF0078D7" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="#FF0078D7" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="FontWeight" Value="Bold" />
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF005EBF" />
+                                <Setter Property="BorderBrush" Value="#FF005EBF" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

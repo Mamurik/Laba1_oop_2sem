@@ -1,0 +1,56 @@
+<Books>
+  <Book>
+    <Title>Война и мир</Title>
+    <Author>Лев Толстой</Author>
+    <Genre>Роман</Genre>
+    <Year>1869</Year>
+    <Publisher>Русский вестник</Publisher>
+    <PageCount>1225</PageCount>
+    <Quantity>5</Quantity>
+  </Book>
+  <Book>
+    <Title>1984</Title>
+    <Author>Джордж Оруэлл</Author>
+    <Genre>Роман</Genre>
+    <Year>1949</Year>
+    <Publisher>Октябрьская революция</Publisher>
+    <PageCount>328</PageCount>
+    <Quantity>3</Quantity>
+  </Book>
+  <Book>
+    <Title>Базы Данных</Title>
+    <Author>Асенчик</Author>
+    <Genre>Неизвестно</Genre>
+    <Year>2019</Year>
+    <Publisher>ГГТУ</Publisher>
+    <PageCount>120</PageCount>
+    <Quantity>1</Quantity>
+  </Book>
+  <Book>
+    <Title>Преступление и наказание</Title>
+    <Author>Фёдор Достоевский</Author>
+    <Genre>Детектив</Genre>
+    <Year>1866</Year>
+    <Publisher>Русский вестник</Publisher>
+    <PageCount>671</PageCount>
+    <Quantity>2</Quantity>
+  </Book>
+  <Book>
+    <Title>Улисс</Title>
+    <Author>Джеймс Джойс</Author>
+    <Genre>Проза</Genre>
+    <Year>1922</Year>
+    <Publisher>Sylvia Beach</Publisher>
+    <PageCount>730</PageCount>
+    <Quantity>4</Quantity>
+  </Book>
+  <Book>
+    <Title>Мастер и Маргарита</Title>
+    <Author>Михаил Булгаков</Author>
+    <Genre>Роман</Genre>
+    <Year>1967</Year>
+    <Publisher>Москва</Publisher>
+    <PageCount>480</PageCount>
+    <Quantity>6</Quantity>
+  </Book>
+</Books>
